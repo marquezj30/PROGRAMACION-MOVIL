@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/inicioFragment">
+
+    <fragment
+        android:id="@+id/inicioFragment"
+        android:name="com.example.tarea5.InicioFragment"
+        android:label="Inicio" >
+        <action
+            android:id="@+id/action_inicioFragment_to_seleccionComidaFragment"
+            app:destination="@id/seleccionComidaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/seleccionComidaFragment"
+        android:name="com.example.tarea5.SeleccionComidaFragment"
+        android:label="Seleccion Comida" >
+        <action
+            android:id="@+id/action_seleccionComidaFragment_to_seleccionExtrasFragment"
+            app:destination="@id/seleccionExtrasFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/seleccionExtrasFragment"
+        android:name="com.example.tarea5.SeleccionExtrasFragment"
+        android:label="Seleccion Extras" >
+        <action
+            android:id="@+id/action_seleccionExtrasFragment_to_resumenPedidoFragment"
+            app:destination="@id/resumenPedidoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resumenPedidoFragment"
+        android:name="com.example.tarea5.ResumenPedidoFragment"
+        android:label="Resumen Pedido" >
+        <action
+            android:id="@+id/action_resumenPedidoFragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+    </fragment>
+
+</navigation>
