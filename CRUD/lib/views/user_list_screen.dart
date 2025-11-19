@@ -5,14 +5,19 @@ import '../models/user.dart';
 import 'user_form_screen.dart';
 
 class UserListScreen extends StatelessWidget {
-  const UserListScreen({super.key});
+  final String email; // <-- agregado
+
+  const UserListScreen({super.key, required this.email}); // <-- agregado
 
   @override
   Widget build(BuildContext context) {
     final viewModel = context.watch<UserViewModel>();
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Lista de Usuarios')),
+      appBar: AppBar(
+        title: Text('Bienvenido: $email'), // <-- agregado
+      ),
+
       body: ListView.builder(
         itemCount: viewModel.usuarios.length,
         itemBuilder: (context, index) {
@@ -53,6 +58,7 @@ class UserListScreen extends StatelessWidget {
           );
         },
       ),
+
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: () async {
